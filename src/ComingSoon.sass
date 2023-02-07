@@ -1,0 +1,44 @@
+@use './_base' as base
+  
+.coming-soon
+  height: 100vh
+  width: 100vw
+  position: absolute
+  top: 0
+  left: 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  text-align: center
+  @media screen and (max-width: 600px) 
+    justify-content: unset
+
+  & > *
+    width: 40%
+    @media screen and (max-width: 600px) 
+      width: 100%
+
+  header
+    box-sizing: border-box
+    & > img
+      margin: 20px
+      display: block
+      max-width: 100px
+      user-select: none
+
+  main 
+    padding: 40px
+    text-align: center
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    & >img
+      margin-right: 20px
+      max-width: 320px
+      @media screen and (max-width: 600px) 
+        max-width: 200px
+      
+  

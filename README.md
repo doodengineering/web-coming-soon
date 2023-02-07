@@ -1,2 +1,3 @@
-# web-coming-soon
-The "Coming Soon" template for DOOD client sites.
+# Coming Soon
+
+The "Coming Soon" single page site for DOOD client sites.

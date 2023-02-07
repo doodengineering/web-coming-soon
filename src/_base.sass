@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap')
+
+// Colors
+$text-color-primary: #1B1B1B
+$text-color-primary-light: #E7E7E7
+$text-color-secondary: #5F5F5F
+$accent-color: #FF8E4D
+$accent-color-lighter: #ffc3a0a2
+$accent-color-lightest: #ffc3a040
+$accent-color-darker: #DB7236
+$accent-color-success: #60d038
+$accent-color-destructive: #ca3f3f
+$accent-color-destructive-light: #eb5656
+$accent-color-destructive-dark: #b22929
+$background-color: #FFFBF7
+$background-secondary: #0000001a
+$background-color-contrast: #ffffff
+$border-color: #cfcfcf
+$border-color-dark: #9e9e9e
+$border-color-light: #e2e2e2
+
+// Animations
+$s-curve: cubic-bezier(0.55, 0.05, 0.45, 0.91)
+
+@mixin transition($duration: 0.2s, $variable: all)
+  transition: $variable $duration $s-curve
+  -webkit-backface-visibility: hidden
+  // -webkit-transform: translateZ(0) scale(1, 1)
+
+@mixin small-screen()
+    @media screen and (max-width: 37.5em)
+        @content
+
+@mixin medium-screen()
+    @media screen and (max-width: 50em)
+        @content
+
+@mixin large-screen()
+    @media screen and (min-width: 60em)
+        @content
+
+@mixin bordered($color: rgba(0,0,0,0.05))
+    border: 1px solid $color
+
+*
+    font-family: 'Syne', sans-serif
+
+body
+  background-color: $background-color
+
+a
+  text-decoration: none
+  color: $accent-color-darker
+  @include transition(0.1s)
+
+  &:hover, &.active
+      color: $accent-color-darker !important
+      @include transition(0.1s)
+  
+
+button, a.button
+    display: inline-block
+    background-color: #343434
+    border-radius: 8px
+    border: none
+    color: #ffffff
+    font-weight: bold
+    padding: 9px 19px
+    font-size: 16px
+    border: 1px solid transparent
+    transform: translateY(0)
+    @include transition(0.1s)
+
+    &:hover
+        cursor: pointer
+        color: #ffffff !important
+        transform: translateY(-1.5px)
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2)
+        border-color: rgba(255,255,255,0.05)
+    
+    &:active
+        transform: translate(0px)
+        box-shadow: 0 1px 1px rgba(0,0,0,0.4)
+
+    &:disabled
+        opacity: 0.4 !important
+        filter: grayscale(1)  !important
+        background-color: $accent-color  !important
+        color: $text-color-primary-light
+        &:hover
+            transform: none  !important
+            background-color: $accent-color !important
+            color: $text-color-primary-light
+            cursor: not-allowed  !important
+            box-shadow: none  !important
