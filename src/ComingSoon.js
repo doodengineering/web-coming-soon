@@ -1,32 +1,25 @@
 import pin from './pin.png';
 import logo from './branding.svg';
 import { Helmet } from 'react-helmet';
-import { sprintf } from 'sprintf-js';
 import './ComingSoon.sass';
+import detectBrowserLanguage from 'detect-browser-language'
 
 function App() {
 
-  const lang = process.env.APP_LANG ?? 'el';
-  const client = process.env.APP_HOST_NAME ?? 'example.gr';
+  const lang = detectBrowserLanguage();
   
-  const title = lang === 'el'
+  const title = lang === 'el-GR'
     ? 'Σύντομα κοντά σας'
     : 'Coming soon';
-  const message = lang === 'el'
-    ? sprintf(
-      'Ο ιστότοπος %s θα είναι σύντομα διαθέσιμος.',
-      client
-    )
-    : sprintf(
-      'The %s website will be avaible soon.',
-      client
-    );
+  const message = lang === 'el-GR'
+    ? 'Ο ιστότοπος θα είναι σύντομα διαθέσιμος.'
+    : 'This website will be avaible soon.';
 
-  const url = lang === 'el' 
+  const url = lang === 'el-GR' 
     ? 'https://www.dood.gr/'
     : 'https://www.dood.gr/en';
 
-  const urlTitle = lang === 'el'
+  const urlTitle = lang === 'el-GR'
     ? 'Επισκεφθείτε μας'
     : 'Visit us';
 
