@@ -2,7 +2,7 @@
 [build]
   # Gatsby deploymnent sequence.
   command = "npm run build"
-  publish = "public"
+  publish = "build"
 
 # Various build enhancements
 [build.processing]
